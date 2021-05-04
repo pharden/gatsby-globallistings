@@ -1,13 +1,8 @@
-import { ObjectType } from 'helpers/definitions';
+import { ObjectType } from 'types/definitions/definitions';
 
-/**
- * ----------------------------------------
- * colors
- * ----------------------------------------
- */
 export const colors: ObjectType = {
   white: '#ffffff',
-  black: '#000000',
+  black: '#333',
   // gray
   gray100: '#F7FAFC',
   gray200: '#EDF2F7',

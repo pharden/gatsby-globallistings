@@ -10,18 +10,9 @@ interface Props {
   siteTitle: string;
 }
 
-/**
- * Header component
- *
- * @param {Props} props
- */
 const Header: React.FC<Props> = ({ siteTitle }) => (
   <HeaderWrapper>
-    <Link to="/">
-      <Title>{siteTitle}</Title>
-    </Link>
     <MainNav />
-    <SwitchThemeMode />
   </HeaderWrapper>
 );
 

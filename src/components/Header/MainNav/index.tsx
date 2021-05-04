@@ -1,55 +1,37 @@
 import React, { useState } from 'react';
 import { Link } from 'gatsby';
-
-import Icon from 'utils/Icon';
-
-import { MainNavWrapper, Nav, NavItem, OpenNavButton, CloseNavButton } from './styles';
+// es:lint disable-next-line
+import Logo from 'assets/images/CBREGL-LOGO.png'
+import { Container, Header, SubNav } from './styles';
 
 interface NavItem {
   title: string;
   slug: string;
 }
 
-const navItems: NavItem[] = [
-  {
-    title: 'Home',
-    slug: '/'
-  },
-  {
-    title: 'About',
-    slug: '/about/'
-  },
-  {
-    title: 'Blog',
-    slug: '/blog/'
-  },
-  {
-    title: 'Contact Us',
-    slug: '/contact/'
-  }
-];
 
 const MainNav: React.FC = () => {
   const [open, setOpen] = useState(false);
 
   return (
-    <MainNavWrapper>
-      <OpenNavButton onClick={() => setOpen(true)}>
-        <Icon icon="bars" />
-      </OpenNavButton>
-      <Nav open={open}>
-        <CloseNavButton onClick={() => setOpen(false)}>
-          <Icon icon="times" />
-        </CloseNavButton>
-        {navItems.map((item, index) => (
-          <NavItem key={`nav-item-${index}`}>
-            <Link to={item.slug} activeClassName="active">
-              {item.title}
+    <Container>
+        <Header>
+            <Link to="/"  >
+                <img src={Logo} alt="CBRE Global Listings" />
             </Link>
-          </NavItem>
-        ))}
-      </Nav>
-    </MainNavWrapper>
+        </Header>
+        <SubNav>
+            {/* {((typeof window !== 'undefined') && window.location.pathname !== '/') &&
+                <BackButton onClick={() => {
+                    // eslint-disable-next-line no-restricted-globals
+                    typeof history !== 'undefined' && history.go(-1)
+                }}>Back</BackButton>
+            } */}
+            {/* <h5>
+                {props.page}
+            </h5> */}
+        </SubNav>
+    </Container>
   );
 };
 

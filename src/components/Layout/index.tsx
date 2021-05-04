@@ -1,5 +1,4 @@
 import React from 'react';
-import { useStaticQuery, graphql } from 'gatsby';
 import { ThemeProvider } from 'styled-components';
 import { useSelector } from 'react-redux';
 import { uiSelector } from 'state/ui';
@@ -16,21 +15,7 @@ interface Props {
   children: React.ReactNode;
 }
 
-/**
- * Layout component
- *
- * @param {Props} props
- */
 const Layout: React.FC<Props> = ({ children }) => {
-  const data = useStaticQuery(graphql`
-    query SiteTitleQuery {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-    }
-  `);
 
   const { themeMode } = useSelector(uiSelector);
 
@@ -38,7 +23,7 @@ const Layout: React.FC<Props> = ({ children }) => {
     <ThemeProvider theme={Theme[themeMode]}>
       <GlobalStyles />
       <LayoutWrapper>
-        <Header siteTitle={data.site.siteMetadata.title} />
+        <Header siteTitle={'CBRE Properties'} />
         <MainWrapper>{children}</MainWrapper>
         <Footer />
       </LayoutWrapper>

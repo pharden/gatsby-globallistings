@@ -1,8 +1,7 @@
 module.exports = {
+  pathPrefix: `/gatsby`,
   siteMetadata: {
-    title: `Gatsby Redux-Toolkit`,
-    description: `Gatsby, Redux-Toolkit, Typescript, Styled Components & Tailwind CSS starter`,
-    author: `Saimir Kapaj`
+    siteUrl: `http://gl-seo.cbrelistings.com/`,
   },
   plugins: [
     `gatsby-plugin-typescript`,
@@ -14,30 +13,15 @@ module.exports = {
         path: `${__dirname}/src/assets/images`
       }
     },
-    `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
-    {
-      resolve: `gatsby-plugin-manifest`,
-      options: {
-        name: `gatsby-redux-toolkit-typescript-starter`,
-        short_name: `starter`,
-        start_url: `/`,
-        background_color: `#667EEA`,
-        theme_color: `#667EEA`,
-        display: `minimal-ui`,
-        icon: `src/assets/images/gatsby-icon.png`
-      }
-    },
-    `gatsby-plugin-offline`,
     `gatsby-plugin-styled-components`,
-    `gatsby-plugin-postcss`,
-    `gatsby-plugin-tailwindcss`,
-    {
-      resolve: `gatsby-plugin-purgecss`,
-      options: {
-        tailwind: true,
-        purgeOnly: [`src/assets/styles/global.css`]
-      }
-    }
+    `gatsby-plugin-sitemap`
   ]
 };
+
+
+// {
+//   resolve: "gatsby-plugin-load-script",
+//   options: {
+//     src: "https://maps.googleapis.com/maps/api/js?key=AIzaSyAnAZuRFSBSnD9GWQsuKINrIM-MSv-XYGk&libraries=places",
+//   }
+// },
